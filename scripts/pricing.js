@@ -1,5 +1,5 @@
 // Pricing page JavaScript
-import { apiCall, showLoading, showError, formatCurrency, formatDuration } from '../scripts/main.js';
+import { apiCall, showLoading, showError, formatCurrency, formatDuration } from './main.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     loadPricing();

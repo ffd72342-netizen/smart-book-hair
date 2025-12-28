@@ -1,5 +1,5 @@
 // Stylists page JavaScript
-import { apiCall, showLoading, showError } from '../scripts/main.js';
+import { apiCall, showLoading, showError } from './main.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     loadStylists();

@@ -1,5 +1,5 @@
 // Home page JavaScript - Testimonials carousel and live stats
-import { apiCall } from '../scripts/main.js';
+import { apiCall } from './main.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeHomePage();
