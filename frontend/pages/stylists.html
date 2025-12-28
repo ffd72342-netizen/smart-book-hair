@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylists - Smart Booking</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/stylists.css">
+    <link rel="stylesheet" href="../styles/stylists.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">Smart Booking</div>
+            <ul class="nav-list">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="stylists.html" class="nav-link active">Stylists</a></li>
+                <li><a href="booking.html" class="nav-link">Book Now</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="ai-stylist.html" class="nav-link">AI Stylist</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="stylists-hero">
+            <div class="hero-content">
+                <h1>Meet Our Expert Stylists</h1>
+                <p>Choose from our team of professional stylists, each with unique specialties and years of experience</p>
+                <div class="stylist-stats">
+                    <div class="stat">
+                        <span class="stat-number">4.8</span>
+                        <span class="stat-label">Average Rating</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Years Combined Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stylist-filters">
+            <div class="filter-tabs">
+                <button class="tab-btn active" data-specialty="all">All Stylists</button>
+                <button class="tab-btn" data-specialty="haircut">Hair Stylists</button>
+                <button class="tab-btn" data-specialty="color">Color Specialists</button>
+                <button class="tab-btn" data-specialty="beard">Beard Experts</button>
+                <button class="tab-btn" data-specialty="facial">Facial Specialists</button>
+            </div>
+        </section>
+
+        <section class="stylists-grid" id="stylists-container">
+            <!-- Stylists will be loaded here -->
+        </section>
+
+        <section class="stylist-spotlight">
+            <h2>Stylist of the Month</h2>
+            <div class="spotlight-card">
+                <div class="spotlight-image">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE1MCIgcj0iNjAiIGZpbGw9IiM2MzY2RjEiLz4KPHA+U3R5bGlzdCBvZiB0aGUgTW9udGg8L3A+Cjwvc3ZnPg==" alt="Stylist of the month" loading="lazy">
+                </div>
+                <div class="spotlight-content">
+                    <h3>Alex Johnson</h3>
+                    <p class="spotlight-title">Master Stylist & Creative Director</p>
+                    <p>Alex has been transforming looks for over 8 years, specializing in modern cuts and creative styling. His attention to detail and artistic vision have made him one of our most requested stylists.</p>
+                    <div class="spotlight-achievements">
+                        <div class="achievement">
+                            <span class="achievement-number">50+</span>
+                            <span class="achievement-label">Awards Won</span>
+                        </div>
+                        <div class="achievement">
+                            <span class="achievement-number">1000+</span>
+                            <span class="achievement-label">Clients Served</span>
+                        </div>
+                        <div class="achievement">
+                            <span class="achievement-number">5★</span>
+                            <span class="achievement-label">Client Rating</span>
+                        </div>
+                    </div>
+                    <a href="booking.html?stylist=1" class="btn btn-primary">Book with Alex</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Smart Booking. Professional salon services.</p>
+    </footer>
+
+    <script type="module" src="../scripts/main.js"></script>
+    <script type="module" src="../scripts/stylists.js"></script>
+</body>
+</html>

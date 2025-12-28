@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Smart Booking</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/services.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">Smart Booking</div>
+            <ul class="nav-list">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link active">Services</a></li>
+                <li><a href="stylists.html" class="nav-link">Stylists</a></li>
+                <li><a href="booking.html" class="nav-link">Book Now</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="ai-stylist.html" class="nav-link">AI Stylist</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Our Services</h1>
+            <p>Professional salon services tailored to your needs</p>
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="category-filter">Category:</label>
+                    <select id="category-filter">
+                        <option value="">All Categories</option>
+                        <option value="hair">Hair</option>
+                        <option value="beard">Beard</option>
+                        <option value="facial">Facial</option>
+                        <option value="nails">Nails</option>
+                        <option value="wellness">Wellness</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="price-filter">Max Price:</label>
+                    <select id="price-filter">
+                        <option value="">Any Price</option>
+                        <option value="25">$25</option>
+                        <option value="50">$50</option>
+                        <option value="80">$80+</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sort-filter">Sort by:</label>
+                    <select id="sort-filter">
+                        <option value="name">Name</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="duration">Duration</option>
+                    </select>
+                </div>
+                <button id="reset-filters" class="btn btn-secondary">Reset</button>
+            </div>
+        </section>
+
+        <section class="services-grid" id="services-container">
+            <!-- Services will be loaded here -->
+        </section>
+
+        <section class="service-comparison" id="comparison-section" style="display: none;">
+            <h2>Compare Services</h2>
+            <div class="comparison-grid" id="comparison-grid">
+                <!-- Comparison will be shown here -->
+            </div>
+            <div class="comparison-actions">
+                <button id="clear-comparison" class="btn btn-secondary">Clear Comparison</button>
+                <a href="booking.html" class="btn btn-primary">Book Selected</a>
+            </div>
+        </section>
+
+        <section class="service-comparison" id="comparison-section" style="display: none;">
+            <h2>Compare Services</h2>
+            <div class="comparison-grid" id="comparison-grid">
+                <!-- Comparison will be shown here -->
+            </div>
+            <div class="comparison-actions">
+                <button id="clear-comparison" class="btn btn-secondary">Clear Comparison</button>
+                <a href="booking.html" class="btn btn-primary">Book Selected</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Smart Booking. Professional salon services.</p>
+    </footer>
+
+    <script type="module" src="../scripts/main.js"></script>
+    <script type="module" src="../scripts/services.js"></script>
+</body>
+</html>

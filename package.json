@@ -1,0 +1,21 @@
+{
+  "name": "smart-booking-system",
+  "version": "1.0.0",
+  "description": "Full-stack smart booking system for barbershops and beauty salons",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["booking", "salon", "barbershop", "fullstack"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

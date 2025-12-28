@@ -1,0 +1,27 @@
+.stylist-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+    border-radius: 8px 8px 0 0;
+}
+
+/* Fallback for missing images */
+.stylist-image img[src=""],
+.stylist-image img:not([src]) {
+    background-color: var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-color);
+    font-size: 2rem;
+}
+
+.stylist-image img[src=""],
+.stylist-image img:not([src])::before {
+    content: "👨‍💼";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,153 @@
+/* AI Stylist page styles */
+.ai-chat {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+.chat-container {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.chat-messages {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 1.5rem;
+}
+
+.message {
+    display: flex;
+    margin-bottom: 1rem;
+    align-items: flex-start;
+}
+
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    flex-shrink: 0;
+    color: white;
+}
+
+.message-content {
+    background-color: white;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    max-width: 80%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chat-input {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+}
+
+#ai-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.input-group input, .input-group select {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+.recommendation-display {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    min-height: 200px;
+}
+
+.recommendation-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.confidence-score {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.recommendation-content {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.recommended-service, .recommended-stylist {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+}
+
+.recommended-service h4, .recommended-stylist h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.service-meta, .stylist-specialties {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.service-meta span {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+}
+
+.recommendation-reasoning {
+    background-color: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+}
+
+.recommendation-reasoning h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.booking-action {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .ai-chat {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Stylist - Smart Booking</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/ai-stylist.css">
+    <link rel="stylesheet" href="../styles/ai-stylist.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">Smart Booking</div>
+            <ul class="nav-list">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="stylists.html" class="nav-link">Stylists</a></li>
+                <li><a href="booking.html" class="nav-link">Book Now</a></li>
+                <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <li><a href="ai-stylist.html" class="nav-link active">AI Stylist</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>AI Stylist Assistant</h1>
+            <p>Get personalized recommendations from our intelligent stylist assistant</p>
+        </section>
+
+        <section class="ai-chat">
+            <div class="chat-container">
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message bot-message">
+                        <div class="message-avatar">🤖</div>
+                        <div class="message-content">
+                            <p>Hello! I'm your AI Stylist Assistant. Tell me about your hair type, preferences, and any special occasion, and I'll recommend the perfect service and stylist for you!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input">
+                    <form id="ai-form">
+                        <div class="input-group">
+                            <select id="hair-type" required>
+                                <option value="">Select hair type</option>
+                                <option value="straight">Straight</option>
+                                <option value="wavy">Wavy</option>
+                                <option value="curly">Curly</option>
+                                <option value="coily">Coily</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="preferences" placeholder="e.g., modern cut, color, beard trim" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="number" id="budget" placeholder="Budget (optional)" min="0">
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="occasion" placeholder="Special occasion (optional)">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Get Recommendation</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="recommendation-display" id="recommendation-display">
+                <!-- AI recommendations will appear here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Smart Booking. Professional salon services.</p>
+    </footer>
+
+    <script type="module" src="../scripts/main.js"></script>
+    <script type="module" src="../scripts/ai-stylist.js"></script>
+</body>
+</html>
