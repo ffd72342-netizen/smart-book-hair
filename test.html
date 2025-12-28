@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Mock API</title>
+</head>
+<body>
+    <h1>Testing Mock API</h1>
+    <button id="test-services">Test Services</button>
+    <button id="test-stylists">Test Stylists</button>
+    <button id="test-booking">Test Booking</button>
+    <div id="output"></div>
+
+    <script type="module">
+        import { getServices, getStylists, bookAppointment } from './scripts/mock-api.js';
+
+        document.getElementById('test-services').addEventListener('click', async () => {
+            try {
+                const result = await getServices();
+                document.getElementById('output').textContent = JSON.stringify(result, null, 2);
+            } catch (error) {
+                document.getElementById('output').textContent = 'Error: ' + error.message;
+            }
+        });
+
+        document.getElementById('test-stylists').addEventListener('click', async () => {
+            try {
+                const result = await getStylists();
+                document.getElementById('output').textContent = JSON.stringify(result, null, 2);
+            } catch (error) {
+                document.getElementById('output').textContent = 'Error: ' + error.message;
+            }
+        });
+
+        document.getElementById('test-booking').addEventListener('click', async () => {
+            try {
+                const result = await bookAppointment({
+                    customerName: 'Test User',
+                    customerEmail: 'test@example.com',
+                    serviceId: 1,
+                    stylistId: 1,
+                    date: '2025-12-30',
+                    time: '10:00'
+                });
+                document.getElementById('output').textContent = JSON.stringify(result, null, 2);
+            } catch (error) {
+                document.getElementById('output').textContent = 'Error: ' + error.message;
+            }
+        });
+    </script>
+</body>
+</html>
