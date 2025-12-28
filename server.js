@@ -1,10 +1,10 @@
 const express = require('express');
 const cors = require('cors');
-const servicesRoutes = require('./routes/services');
-const stylistsRoutes = require('./routes/stylists');
-const availabilityRoutes = require('./routes/availability');
-const bookingsRoutes = require('./routes/bookings');
-const aiRoutes = require('./routes/ai');
+const servicesRoutes = require('../routes/services');
+const stylistsRoutes = require('../routes/stylists');
+const availabilityRoutes = require('../routes/availability');
+const bookingsRoutes = require('../routes/bookings');
+const aiRoutes = require('../routes/ai');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
