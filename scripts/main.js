@@ -1,5 +1,15 @@
 // Main JavaScript - Common functionality
-import { API_BASE } from './config.js';
+import {
+    getServices,
+    getServiceById,
+    getStylists,
+    getStylistById,
+    getAvailability,
+    bookAppointment,
+    getBookings,
+    getAIRecommendation,
+    sendContactMessage
+} from './mock-api.js';
 
 // Navigation active state management
 function setActiveNavLink() {
@@ -16,28 +26,66 @@ function setActiveNavLink() {
     });
 }
 
-// Utility functions for API calls
+// Utility functions for API calls (now using mock functions)
 export async function apiCall(endpoint, options = {}) {
-    const url = `${API_BASE}${endpoint}`;
-
-    try {
-        const response = await fetch(url, {
-            headers: {
-                'Content-Type': 'application/json',
-                ...options.headers
-            },
-            ...options
+    // Parse endpoint and query parameters
+    const [path, queryString] = endpoint.split('?');
+    const queryParams = {};
+    if (queryString) {
+        queryString.split('&').forEach(param => {
+            const [key, value] = param.split('=');
+            queryParams[key] = decodeURIComponent(value);
         });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        return await response.json();
-    } catch (error) {
-        console.error('API call failed:', error);
-        throw error;
     }
+
+    // Handle different endpoints
+    if (path === '/services') {
+        return await getServices();
+    }
+
+    if (path === '/stylists') {
+        return await getStylists();
+    }
+
+    if (path === '/bookings') {
+        if (options.method === 'POST') {
+            const bookingData = JSON.parse(options.body);
+            return await bookAppointment(bookingData);
+        }
+        return await getBookings();
+    }
+
+    if (path === '/availability') {
+        return await getAvailability(queryParams.stylistId, queryParams.date);
+    }
+
+    if (path === '/ai/recommendation') {
+        if (options.method === 'POST') {
+            const input = JSON.parse(options.body);
+            return await getAIRecommendation(input);
+        }
+        return await getAIRecommendation(queryParams.input || '');
+    }
+
+    if (path === '/contact') {
+        if (options.method === 'POST') {
+            const messageData = JSON.parse(options.body);
+            return await sendContactMessage(messageData);
+        }
+    }
+
+    // Handle dynamic endpoints with IDs
+    const serviceMatch = path.match(/^\/services\/(\d+)$/);
+    if (serviceMatch) {
+        return await getServiceById(serviceMatch[1]);
+    }
+
+    const stylistMatch = path.match(/^\/stylists\/(\d+)$/);
+    if (stylistMatch) {
+        return await getStylistById(stylistMatch[1]);
+    }
+
+    throw new Error(`Unknown endpoint: ${endpoint}`);
 }
 
 // Loading state management

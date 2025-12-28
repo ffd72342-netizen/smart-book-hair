@@ -1,9 +1,11 @@
 // Contact page JavaScript
+import { apiCall, showLoading, showError } from './main.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('contact-form').addEventListener('submit', handleContactSubmit);
 });
 
-function handleContactSubmit(e) {
+async function handleContactSubmit(e) {
     e.preventDefault();
 
     const name = document.getElementById('contact-name').value;
@@ -11,10 +13,32 @@ function handleContactSubmit(e) {
     const subject = document.getElementById('contact-subject').value;
     const message = document.getElementById('contact-message').value;
 
-    // In a real application, this would send to a backend API
-    // For now, we'll just show a success message
-    alert(`Thank you for your message, ${name}! We'll get back to you soon.`);
+    const submitButton = e.target.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
 
-    // Reset form
-    e.target.reset();
+    try {
+        const response = await apiCall('/contact', {
+            method: 'POST',
+            body: JSON.stringify({
+                name,
+                email,
+                subject,
+                message
+            })
+        });
+
+        if (response.success) {
+            alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+            e.target.reset();
+        } else {
+            alert('Failed to send message. Please try again.');
+        }
+    } catch (error) {
+        alert('Failed to send message. Please check your connection and try again.');
+    } finally {
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+    }
 }
